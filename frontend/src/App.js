@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -9,7 +8,7 @@ import JokeList from './jokes/JokeList.json';
 function App() {
   const [indexJoke, setIndexJoke] = useState(0);
   const [cookies, setCookie] = useCookies(['user']);
-  const checkCookie = (cookies.Jokes == undefined || cookies.Jokes < JokeList.length)? false : true;
+  const checkCookie = (cookies.Jokes === undefined || cookies.Jokes < JokeList.length)? false : true;
   const [joke, setJoke] = useState(!checkCookie?JokeList[indexJoke].text:"That's all the jokes for today! Come back another day!");
   const [isLastes, setIsLastes] = useState(checkCookie);
 
